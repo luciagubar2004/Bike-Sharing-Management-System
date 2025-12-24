@@ -1,0 +1,57 @@
+///////////////////////////
+// CASOS DE USO ITERACIÓN 0
+///////////////////////////
+
+/// REGISTRO DE CICLISTAS ///
+
+Se registran tres ciclistas
+
+
+/// RECARGAR SALDO ///
+
+<<inicio sesión cic0 (Pogacar)>>
+Pogacar recarga 20€
+
+<<cierre sesión cic0>>
+
+<<inicio sesión cic1 (Contador)>>
+Contador recarga 15€
+
+<<cierre sesión cic1>>
+
+
+/// LISTAR USUARIOS ///
+
+<<inicio sesión admin>>
+(admin inicial creado en el main)
+
+lista de ciclistas:
+Usuario: cic1
+ Clave: clave
+ Nombre: Alberto Contador
+ Tipo: Ciclista
+ Saldo: 15.0
+
+Usuario: cic2
+ Clave: clave
+ Nombre: Jonas Vingegaard
+ Tipo: Ciclista
+ Saldo: 0.0
+
+Usuario: cic0
+ Clave: clave
+ Nombre: Tadej Pogacar
+ Tipo: Ciclista
+ Saldo: 20.0
+
+hay 3 usuarios de tipo "Ciclista"
+
+lista de administradores:
+Usuario: admin
+ Clave: admin
+ Nombre: Laura Admin
+ Tipo: Administrador
+
+hay 1 usuarios de tipo "Administrador"
+
+<<cierre sesión admin>>

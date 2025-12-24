@@ -1,0 +1,215 @@
+///////////////////////////
+// CASOS DE USO ITERACIÓN 0
+///////////////////////////
+
+/// REGISTRO DE CICLISTAS ///
+
+Se registran tres ciclistas
+
+
+/// RECARGAR SALDO ///
+
+<<inicio sesión cic0 (Pogacar)>>
+Pogacar recarga 20€
+
+<<cierre sesión cic0>>
+
+<<inicio sesión cic1 (Contador)>>
+Contador recarga 15€
+
+<<cierre sesión cic1>>
+
+
+/// LISTAR USUARIOS ///
+
+<<inicio sesión admin>>
+(admin inicial creado en el main)
+
+lista de ciclistas:
+Usuario: cic1
+ Clave: clave
+ Nombre: Alberto Contador
+ Tipo: Ciclista
+ Saldo: 15.0
+
+Usuario: cic2
+ Clave: clave
+ Nombre: Jonas Vingegaard
+ Tipo: Ciclista
+ Saldo: 0.0
+
+Usuario: cic0
+ Clave: clave
+ Nombre: Tadej Pogacar
+ Tipo: Ciclista
+ Saldo: 20.0
+
+hay 3 usuarios de tipo "Ciclista"
+
+lista de administradores:
+Usuario: admin
+ Clave: admin
+ Nombre: Laura Admin
+ Tipo: Administrador
+
+hay 1 usuarios de tipo "Administrador"
+
+<<cierre sesión admin>>
+
+
+///////////////////////////
+// CASOS DE USO ITERACIÓN 1
+///////////////////////////
+
+/// REGISTRAR ESTACIÓN ///
+
+<<inicio sesión admin>>
+
+Admin registra varias estaciones en el sistema
+
+(la siguiente falla por utilizar un identificador repetido)
+Ya existe la estación e3
+
+
+/// REGISTRAR BICI ///
+
+Admin registra muchas bicis (eléctricas y mecánicas) en el sistema
+
+(los siguientes registros de bicis fallan por diversas razones)
+Ya existe la bici 0
+No existe la estación e7
+No hay anclaje libre para asignar la bici 15 a la estación e1
+
+<<cierre sesión admin>>
+
+
+/// VER ESTACIÓN ///
+
+<<inicio sesión cic0 (Pogacar)>>
+
+Pogacar pide información de varias estaciones
+
+Estación e0
+ Nombre: Plaza Mayor
+ Coordenadas: (5.0, 5.0)
+ Bicis eléctricas disponibles: 3
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 1
+
+Estación e3
+ Nombre: Parquesol
+ Coordenadas: (3.0, 3.0)
+ Bicis eléctricas disponibles: 0
+ Bicis mecánicas disponibles: 0
+ Anclajes libres: 3
+
+(la siguiente estación no existe)
+No existe la estación e10
+
+
+/// BUSCAR ESTACIONES ///
+
+La ordenación de estaciones es OPCIONAL (ver enunciado de la práctica).
+Si no se va a realizar la ordenación basta con no tratar el parámetro con el orden de la llamada.
+
+Pogacar está en la posición (2.3, 3.1) y busca estaciones de acuerdo a varios criterios y con distinto orden
+
+Búsqueda de estaciones con bicis disponibles a menos de 5km, ordenadas por cercanía al ciclista:
+Estación e4
+ Nombre: Campogrande
+ Coordenadas: (4.0, 5.0)
+ Bicis eléctricas disponibles: 2
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 0 
+ Distancia: 2,55km
+Estación e0
+ Nombre: Plaza Mayor
+ Coordenadas: (5.0, 5.0)
+ Bicis eléctricas disponibles: 3
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 1 
+ Distancia: 3,30km
+Estación e2
+ Nombre: Peral
+ Coordenadas: (1.0, 0.0)
+ Bicis eléctricas disponibles: 1
+ Bicis mecánicas disponibles: 0
+ Anclajes libres: 2 
+ Distancia: 3,36km
+
+Búsqueda de estaciones con anclajes disponibles a menos de 6km, ordenadas por número de anclajes:
+Estación e3
+ Nombre: Parquesol
+ Coordenadas: (3.0, 3.0)
+ Bicis eléctricas disponibles: 0
+ Bicis mecánicas disponibles: 0
+ Anclajes libres: 3 
+ Distancia: 0,71km
+Estación e2
+ Nombre: Peral
+ Coordenadas: (1.0, 0.0)
+ Bicis eléctricas disponibles: 1
+ Bicis mecánicas disponibles: 0
+ Anclajes libres: 2 
+ Distancia: 3,36km
+Estación e0
+ Nombre: Plaza Mayor
+ Coordenadas: (5.0, 5.0)
+ Bicis eléctricas disponibles: 3
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 1 
+ Distancia: 3,30km
+
+Búsqueda de estaciones con bicis disponibles a menos de 4km, ordenadas por número de bicis eléctricas:
+Estación e0
+ Nombre: Plaza Mayor
+ Coordenadas: (5.0, 5.0)
+ Bicis eléctricas disponibles: 3
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 1 
+ Distancia: 3,30km
+Estación e4
+ Nombre: Campogrande
+ Coordenadas: (4.0, 5.0)
+ Bicis eléctricas disponibles: 2
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 0 
+ Distancia: 2,55km
+Estación e2
+ Nombre: Peral
+ Coordenadas: (1.0, 0.0)
+ Bicis eléctricas disponibles: 1
+ Bicis mecánicas disponibles: 0
+ Anclajes libres: 2 
+ Distancia: 3,36km
+
+<<cierre sesión cic0>>
+
+<<inicio sesión cic1 (Contador)>>
+
+Contador está en la posición (8.7, 9.3) y hace la misma búsqueda que la primera de Pogacar
+
+Búsqueda de estaciones con bicis disponibles a menos de 5km, ordenadas por cercanía al ciclista:
+Estación e1
+ Nombre: Teleco
+ Coordenadas: (8.0, 9.0)
+ Bicis eléctricas disponibles: 0
+ Bicis mecánicas disponibles: 3
+ Anclajes libres: 0 
+ Distancia: 0,76km
+Estación e6
+ Nombre: Pajarillos
+ Coordenadas: (10.0, 8.0)
+ Bicis eléctricas disponibles: 1
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 1 
+ Distancia: 1,84km
+Estación e5
+ Nombre: Rondilla
+ Coordenadas: (7.0, 7.0)
+ Bicis eléctricas disponibles: 1
+ Bicis mecánicas disponibles: 1
+ Anclajes libres: 1 
+ Distancia: 2,86km
+
+<<cierre sesión ci10>>
